@@ -29,7 +29,7 @@ public class AmazonPage {
 	By buyNow = By.xpath("/html/body/div[1]/div[2]/div[1]/div[1]/div/span[1]/div[1]/div[5]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a/span");
 	By buyButton = By.name("submit.buy-now");
 	By amazonLogo = By.partialLinkText("Amazon.in");
-    By signout = By.xpath("//i[@class='hm-icon nav-sprite']");
+        By signout = By.xpath("//i[@class='hm-icon nav-sprite']");
 	By signoutButton = By.xpath("//a[text()='Sign Out']");
 	
 	public void login(){
@@ -71,6 +71,7 @@ public class AmazonPage {
 	public void logOut(){
 		//Logging Out
 		driver.findElement(amazonLogo).click();
+		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 		driver.findElement(signout).click();
 		driver.findElement(signoutButton).click();
 	}
